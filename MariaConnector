@@ -1,0 +1,22 @@
+import mysql.connector
+
+# Connect to server
+cnx = mysql.connector.connect(
+    host="localhost",
+    user="MANNE",
+    password="skogen12",
+    database="TEST")
+
+cursor = cnx.cursor()
+
+
+add_data = ("INSERT INTO TEMP (temp) VALUES (%s)")
+value = 11,
+
+cursor.execute(add_data, value)
+emp_no = cursor.lastrowid
+
+cnx.commit()
+
+# Close connection
+cnx.close()
